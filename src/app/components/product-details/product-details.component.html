@@ -1,0 +1,22 @@
+<div class="card">
+  <img
+    [src]="productData.url"
+    class="card-img-left"
+    style="
+      list-style-type: none;
+      width: 290px;
+      padding: 20px;
+      margin: 6px 6px;
+      border: 1px solid #33b5e5;
+    "
+    alt="..."
+  />
+  <div class="card-body" style="margin-top:4rem" >
+    <h3 class="card-title">{{ productData.name }}</h3>
+    <h4 class="card-text">${{ productData.price }}</h4>
+    <h5 class="card-text">
+      {{ productData.description }}
+    </h5>
+    <a class="btn btn-success"routerLink="/productList" >Back To Product List</a>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<form style="text-align: center; padding: 10px;" #form="ngForm" (ngSubmit)="confirmation()">
+  <h1>Checkout form</h1>
+  <label>Your Name</label>
+  <input
+    type="text"
+    name="Name"
+    required
+    minlength="8"
+    placeholder="Enter your name"
+    [(ngModel)]="Name"
+    style="margin:20px"
+  />
+  <br>
+  <label>Your Address</label>
+  <input
+    type="text"
+    name="Address"
+    required
+    minlength="8"
+    placeholder="Enter your address"
+    [(ngModel)]="Address"
+    style="margin:20px"
+  />
+  <br>
+  <label>payment details</label>
+  <input
+    type="text"
+    name="CreditCard"
+    required
+    minlength="16"
+    maxlength="16"
+    placeholder="Enter your Credit Card"
+    [(ngModel)]="CreditCard"
+    style="margin:20px"
+  />
+  <br>
+  <h5>Your <b>${{ sum }}</b> order is confirmed!</h5>
+
+  <input
+    type="submit"
+    [disabled]="form.invalid"
+    value="submit"
+    class="btn btn-primary"
+    style="margin:20px"
+  />
+</form>

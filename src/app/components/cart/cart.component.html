@@ -1,0 +1,45 @@
+<div class="text-center">
+  <h3>cart</h3>
+  <hr />
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Image</th>
+        <th>name</th>
+        <th>price</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let selected of items; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td class="col-2">
+          <img [src]="selected.url" style="width: 50%; height: 50%" alt="..." />
+        </td>
+        <td style="padding-top: 4rem">
+          {{ selected.name }}
+        </td>
+        <td style="padding-top: 4rem">{{ selected.price }}</td>
+        <td style="padding-top: 4rem">
+          <div style="display: inline">
+            <button class="btn mx-3" (click)="decreaseCounter(selected)">-</button>
+            {{ quantity }}
+            <button class="btn" (click)="increaseCounter(selected)">+</button>
+          </div>
+        </td>
+        <td style="padding-top: 4rem">
+          <button class="btn btn-danger" (click)="remove(selected)">
+            remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <h5>Total Price: $ {{ sum }}</h5>
+  </div>
+  <a class="btn btn-primary" (click)="checkout()">checkout</a>
+</div>

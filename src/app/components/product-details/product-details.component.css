@@ -1,0 +1,6 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.card {
+  flex-direction: row;
+  margin-top: 4rem;
+  margin-left: 10rem;
+}
