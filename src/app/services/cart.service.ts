@@ -1,23 +1,36 @@
 import { Injectable } from '@angular/core';
 import { product } from '../models/product';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   cartItems: product[] = [];
 
-
   constructor() { }
 
-  addTOCart(product:product){
-    this.cartItems.push(product)
+
+  addTOCart(product: product) {
+    let exist:boolean = false;
+    this.cartItems = this.cartItems.map(cart =>
+      {
+        if(cart.id == product.id){
+          exist = true;
+            alert('already exist in cart')
+        }
+      return cart;
+      });
+
+    if(!exist){
+        this.cartItems.push(product);
+        alert('this item added to your cart')
+    }
   }
 
-  getCartItems(){
+  getCartItems() {
     return this.cartItems;
   }
+
 
   removeCartItem(product: product) {
     this.cartItems.map((a, index) => {
@@ -27,8 +40,8 @@ export class CartService {
     })
   }
 
-  clearCart(){
-    this.cartItems=[];
+  clearCart() {
+    this.cartItems = [];
     return this.cartItems
   }
 }

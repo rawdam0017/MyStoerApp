@@ -4,13 +4,7 @@ export interface product{
   price: number;
   url:string;
   description: string;
-
-  // constructor(){
-  //   this.id= 1;
-  //   this.name ='';
-  //   this.price= 0;
-  //   this.url='';
-  //   this.description='';
-  // }
+  option: number
 }
 
+export const productCount: number[] = [1,2,3,4,5];

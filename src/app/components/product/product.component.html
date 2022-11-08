@@ -1,23 +1,22 @@
 <div class="card text-center">
   <a routerLink="/product-detalis/{{ cardItem.id }}">
     <img
-    [src]="cardItem.url"
-    style="
-      list-style-type: none;
-      width: 290px;
-      padding: 20px;
-      margin: 6px 6px;
-      border: 1px solid #33b5e5;
+      [src]="cardItem.url"
+      style="
+        list-style-type: none;
+        width: 290px;
+        padding: 20px;
+        margin: 6px 6px;
+        border: 1px solid #33b5e5;
       "
-    class="card-img-top"
+      class="card-img-top"
     />
   </a>
   <div class="card-body">
     <h4 class="card-title">{{ cardItem.name }}</h4>
     <h5 class="card-text">${{ cardItem.price }}</h5>
-    <div>
     <a class="btn btn-primary m-2" (click)="addToCart(cardItem)">Add To Cart</a>
     <br />
-    <a  class="btn btn-success" (click)="showDetails()">Show Details</a>
+    <a class="btn btn-success" (click)="showDetails()">Show Details</a>
   </div>
 </div>

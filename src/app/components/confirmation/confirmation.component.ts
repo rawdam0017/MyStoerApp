@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./confirmation.component.css']
 })
 export class ConfirmationComponent implements OnInit {
-  Name :string = ''
+  Name: string = ''
 
   constructor(private route: ActivatedRoute) { }
 
@@ -17,5 +17,8 @@ export class ConfirmationComponent implements OnInit {
       this.Name = String(params.get('Name'));
     })
   }
+
+
+
 
 }

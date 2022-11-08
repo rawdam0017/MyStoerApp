@@ -14,11 +14,14 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 import { InMemoryDataService } from './services/data.service';
 import { CheckoutFormComponent } from './components/checkout-form/checkout-form.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { ConfirmationMassageComponent } from './components/confirmation-massage/confirmation-massage.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     ProductComponent,
     ProductDetailsComponent,
     CheckoutFormComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ConfirmationMassageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
